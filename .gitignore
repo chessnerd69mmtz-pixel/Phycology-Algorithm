@@ -1,0 +1,20 @@
+# Local secrets — never commit real API keys
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Local databases / reports / WhatsApp auth / runtime state
+data/
+auth_info_baileys/
+auth_info_baileys*/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Local backups / generated runtime files
+backups/
+reports/
