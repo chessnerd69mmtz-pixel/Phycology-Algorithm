@@ -1,10 +1,18 @@
 # Ary AI — Phycology Algorithm
 
-This is the **Phycology-Algorithm** repository for the Ary AI / WhatsApp conversation-analysis project.
+This repository hosts the Ary AI / WhatsApp conversation-analysis project and its public GitHub Pages landing page.
+
+## Public site
+
+After GitHub Pages is enabled for the `main` branch root, the public site will be:
+
+**https://chessnerd69mmtz-pixel.github.io/Phycology-Algorithm/**
+
+The landing page includes the Windows download and official links to obtain the supported AI provider keys.
 
 ## API keys are user-supplied
 
-**No private API key is committed here.** The repository contains only blank provider configuration and a Windows setup script that asks each user for their own keys locally.
+**No private API key is committed here.** Each user supplies their own credentials locally.
 
 Supported environment variables:
 
@@ -14,14 +22,19 @@ Supported environment variables:
 
 The repository excludes `.env`, databases, WhatsApp authentication state, logs, and other local secrets through `.gitignore`.
 
-### Local setup
+## Official API-key links
 
-1. Download **`releases/Ary-AI-8.24.2-GENERAL-MODE-FIX.zip`** from this repository.
+- **Groq:** https://console.groq.com/keys
+- **Mistral:** https://docs.mistral.ai/admin/identity-access/api-keys
+- **Unlimitless:** https://unlimitless.ai/developers
+
+## Local setup
+
+1. Download `releases/Ary-AI-8.24.2-GENERAL-MODE-FIX.zip`.
 2. Extract it on Windows.
 3. Run **`SET AI API KEYS.cmd`** and enter your own keys.
 4. Run **`Ary AI Execute.cmd`**.
-
-The API keys are never intended to be hard-coded into browser files or committed to GitHub.
+5. Connect WhatsApp when the QR/session flow appears.
 
 ## Provider behavior
 
@@ -29,21 +42,21 @@ The current cloud generation path is:
 
 **Mistral → Groq fallback**
 
-The Unlimitless key is accepted and stored locally. The application does not invent an undocumented Unlimitless chat-completions endpoint.
+The Unlimitless credential is accepted and stored locally. The application does not invent an undocumented Unlimitless chat-completions endpoint.
 
-## Release archive
+## GitHub Pages vs. the full application
 
-The complete **Ary AI 8.24.2 General Mode Fix** ZIP is stored in this repository under:
+The root `index.html` is the public landing/download page. GitHub Pages serves that static page only; it does not run the Node/Express + WhatsApp backend.
+
+The complete Windows application is distributed in:
 
 `releases/Ary-AI-8.24.2-GENERAL-MODE-FIX.zip`
-
-It contains the Windows application source, launchers, server, client, scripts, documentation, and blank `.env.example` configuration from the 8.24.2 build.
 
 ## Security
 
 Never commit a real API key.
 
-Recommended local files that must remain untracked:
+Keep these local files untracked:
 
 ```
 .env
@@ -54,5 +67,3 @@ auth_info_baileys/
 *.sqlite3
 *.log
 ```
-
-The repository has been checked for common Groq/OpenAI-style secret prefixes and no such secret was found.
