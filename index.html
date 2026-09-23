@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ary AI — Phycology Algorithm">
+<title>Ary AI — Phycology Algorithm</title>
+<style>
+:root{--bg:#050814;--panel:rgba(12,20,42,.88);--cyan:#00f0ff;--mag:#ff007f;--purple:#a100ff;--green:#00ff66;--text:#f5f7ff;--muted:#9ca8c7;--border:rgba(255,255,255,.10)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 10% 10%,rgba(0,240,255,.12),transparent 34%),radial-gradient(circle at 88% 18%,rgba(161,0,255,.12),transparent 34%),var(--bg);min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 36px));margin:0 auto}
+nav{padding:20px 0}
+.navbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}
+.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#050814;font-weight:1000;box-shadow:0 0 28px rgba(0,240,255,.25)}
+.pill{padding:9px 13px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:13px}
+.hero{padding:70px 0 40px;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.22em;color:var(--cyan);font-weight:800}
+h1{font-size:clamp(42px,7vw,82px);line-height:.98;margin:16px 0;background:linear-gradient(90deg,#fff 25%,var(--cyan),#fff 72%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:800px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.7}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;font-weight:800;border:1px solid var(--border);transition:.2s}
+.btn:hover{transform:translateY(-1px)}
+.primary{background:linear-gradient(135deg,var(--cyan),#54a8ff);color:#06101a}
+.secondary{background:rgba(255,255,255,.04)}
+.section{padding:38px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 16px 50px rgba(0,0,0,.22)}
+.card h2{margin:0 0 9px;font-size:21px}.card p{margin:0;color:var(--muted);line-height:1.65}
+.step{font-size:12px;color:var(--cyan);font-weight:900;letter-spacing:.12em}
+.provider{display:flex;justify-content:space-between;align-items:center;gap:14px}.provider+.provider{margin-top:12px}
+.provider .name{font-weight:800}.provider small{display:block;color:var(--muted);margin-top:3px}
+.provider a{padding:8px 11px;border-radius:9px;background:rgba(255,255,255,.06);font-weight:700}
+.notice{border-left:3px solid var(--green)}
+footer{padding:45px 0 60px;color:var(--muted);text-align:center}
+@media(max-width:840px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap navbar">
+    <a class="brand" href="#"><span class="logo">AA</span><span>Ary AI</span></a>
+    <span class="pill">Phycology Algorithm</span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">PRIVATE · USER-KEYED · WINDOWS</div>
+    <h1>Ary AI</h1>
+    <p>Conversation intelligence and psychology analysis for your own WhatsApp data. Download the Windows package, enter your own AI provider keys, connect WhatsApp, and run Ary AI locally.</p>
+    <div class="actions">
+      <a class="btn primary" href="releases/Ary-AI-8.24.2-GENERAL-MODE-FIX.zip">Download Ary AI 8.24.2</a>
+      <a class="btn secondary" href="https://github.com/chessnerd69mmtz-pixel/Phycology-Algorithm" target="_blank" rel="noopener">View GitHub repository</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap grid">
+    <div class="card">
+      <div class="step">01 · DOWNLOAD</div>
+      <h2>Get the Windows package</h2>
+      <p>Download the release ZIP, extract it, and keep the folder together. The package includes the Windows launcher and setup scripts.</p>
+    </div>
+    <div class="card">
+      <div class="step">02 · KEYS</div>
+      <h2>Use your own API keys</h2>
+      <p>Run <b>SET AI API KEYS.cmd</b>. Your keys are stored locally in <code>.env</code>; this repository contains no private provider key.</p>
+    </div>
+    <div class="card">
+      <div class="step">03 · RUN</div>
+      <h2>Start Ary AI</h2>
+      <p>Run <b>Ary AI Execute.cmd</b>, then connect WhatsApp when the QR is shown. The cloud AI path is Mistral first, with Groq fallback.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card">
+      <div class="step">GET YOUR KEYS</div>
+      <h2 style="margin-top:8px">Official provider links</h2>
+      <div style="margin-top:18px">
+        <div class="provider"><div><div class="name">Groq</div><small>Create and manage Groq API keys.</small></div><a href="https://console.groq.com/keys" target="_blank" rel="noopener">Get Groq key ↗</a></div>
+        <div class="provider"><div><div class="name">Mistral</div><small>Create a Mistral API key in Studio.</small></div><a href="https://docs.mistral.ai/admin/identity-access/api-keys" target="_blank" rel="noopener">Get Mistral key ↗</a></div>
+        <div class="provider"><div><div class="name">Unlimitless</div><small>Open Unlimitless Developers to sign in and mint an API key.</small></div><a href="https://unlimitless.ai/developers" target="_blank" rel="noopener">Get Unlimitless key ↗</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card notice">
+      <div class="step">IMPORTANT</div>
+      <h2>GitHub Pages is the public landing page</h2>
+      <p style="margin-bottom:10px">This page is static. GitHub Pages does not run the Node/Express WhatsApp backend, so the full Ary AI application is still launched locally on Windows from the downloaded package.</p>
+      <p>The public page never contains your API keys. Each user supplies their own credentials on their own device.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Ary AI · Phycology Algorithm · <a href="https://github.com/chessnerd69mmtz-pixel/Phycology-Algorithm">GitHub</a></div>
+</footer>
+</body>
+</html>
