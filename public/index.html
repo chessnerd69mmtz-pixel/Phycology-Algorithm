@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ary AI</title>
+<link rel="stylesheet" href="style.css?v=20260912-8.22-ary-history">
+</head>
+<body>
+<div id="qr-screen" class="qr-screen"><div class="qr-card"><div class="brand-mark large">AA</div><div class="eyebrow">PRIVATE WORKSPACE</div><h1>Connect WhatsApp</h1><p>Open WhatsApp → Linked Devices → Link a Device, then scan this QR code.</p><div class="qr-image-wrap"><img id="qr-img" alt="WhatsApp QR code"></div><div id="qr-status">Waiting for QR code…</div><button id="new-qr-btn" class="secondary qr-retry-btn" type="button">↻ Generate a fresh QR</button><small class="qr-help">QR scan only. If a scan fails or expires, press this button for a completely fresh QR.</small></div></div>
+
+<div id="app" class="app hidden">
+  <header class="site-header">
+    <div class="brand"><div class="brand-mark">AA</div><div><strong>Ary AI</strong><span>AI-powered conversation intelligence</span></div></div>
+    <div class="header-status"><span id="conn-dot" class="live-dot"></span><span>WhatsApp <b>Connected</b></span></div>
+    <div class="conversation-picker"><span class="picker-icon">◉</span><div><small>ACTIVE CONVERSATION</small><b id="top-conversation">Select a conversation</b></div></div>
+    <div class="header-model"><span>AI</span><div><small>AI PROVIDERS</small><b>Mistral → Groq fallback</b></div></div>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <button type="button" class="nav-tab active" data-page="history-page">⌂ <span>History & Settings</span></button>
+    <button type="button" class="nav-tab ary-ai-nav" data-page="ary-ai-page">✦ <span>Ary AI</span></button>
+    <button type="button" class="nav-tab corporate-nav" data-page="corporate-page">▥ <span>Professional Mode</span></button>
+    <button type="button" class="nav-tab" data-page="relationship-page">♡ <span>Relationship Mode</span></button>
+    <button type="button" class="nav-tab" data-page="text-page">▤ <span>Analyze Text</span></button>
+    <button type="button" class="nav-tab" data-page="deep-page">◈ <span>Deep Analysis</span></button>
+    <button type="button" class="nav-tab" data-page="contacts-page">♙ <span>My Contacts</span></button>
+    <button type="button" class="nav-tab" data-page="reports-page">▣ <span>Save Reports</span><em id="saved-count">0</em></button>
+  </nav>
+
+  <div class="workspace">
+    <main id="ary-ai-page" class="page">
+      <section class="page-heading ary-ai-heading"><div><span class="eyebrow">ARY AI</span><h1>Ask Ary AI anything</h1><p>A general-purpose AI assistant grounded in your locally stored WhatsApp conversations and contacts.</p></div><div class="heading-actions"><button id="ary-ai-history-toggle" class="secondary">History</button><button id="ary-ai-new-chat" class="secondary">+ New chat</button></div></section>
+      <div id="ary-ai-history-panel" class="ary-ai-history-panel hidden"><div class="ary-ai-history-head"><b>Past conversations</b><button id="ary-ai-history-close" class="tiny" aria-label="Close history">✕</button></div><div id="ary-ai-history-list" class="ary-ai-history-list"><div class="empty-list">No conversations yet.</div></div></div>
+      <section class="ary-ai-layout">
+        <div class="ary-ai-chat-card">
+          <div class="ary-ai-thread-bar"><span class="ary-ai-thread-dot">●</span><b id="ary-ai-thread-title">New conversation</b></div>
+          <div id="ary-ai-messages" class="ary-ai-messages"><div class="ary-ai-welcome"><div class="hero-icon">✦</div><h2>Hi, I'm Ary AI.</h2><p>Ask me about your conversations, contacts, tone, evidence, communication patterns, or a general question.</p></div></div>
+          <div class="ary-ai-composer"><textarea id="ary-ai-context" class="large-input ary-ai-context" rows="4" placeholder="Optional context…"></textarea><textarea id="ary-ai-input" class="large-input" rows="3" placeholder="Ask Ary AI anything…"></textarea><div class="ary-ai-compose-row"><label><span>Data access</span><select id="ary-ai-scope"><option value="workspace">Use WhatsApp data when relevant</option><option value="conversation">Prioritize active conversation</option><option value="none">Generic AI only</option></select></label><button id="ary-ai-stop" class="secondary hidden">Stop</button><button id="ary-ai-send" class="primary">Ask Ary AI ↗</button></div><div id="ary-ai-timer" class="ary-ai-timer"><span>Response window</span><strong id="ary-ai-timer-value">03:00</strong><small id="ary-ai-timer-status">Cloud AI response window</small></div></div>
+        </div>
+        <aside class="ary-ai-side"><div class="tool-card"><div class="card-heading"><div class="icon-badge">⌁</div><div><h2>What Ary AI can do</h2><p>Use natural language instead of navigating separate tools.</p></div></div><ul class="ary-capabilities"><li>Answer questions about contacts and conversation counts</li><li>Inspect an active conversation and explain evidence</li><li>Explain tone, intent and communication dynamics</li><li>List relevant psychological / communication principles</li><li>Separate observations from interpretations and uncertainty</li></ul></div></aside>
+      </section>
+    </main>
+
+    <main id="corporate-page" class="page"><section class="page-heading"><div><span class="eyebrow">PROFESSIONAL MODE</span><h1>Corporate Communication Analysis</h1><p>Paste up to 150 words for practical workplace communication guidance.</p></div></section></main>
+    <main id="relationship-page" class="page"><section class="page-heading"><div><span class="eyebrow">RELATIONSHIP MODE</span><h1>Relationship & communication analysis</h1><p>Choose conversations and an objective to compare observable patterns and evidence.</p></div></section></main>
+    <main id="text-page" class="page"><section class="page-heading"><div><span class="eyebrow">TEXT ANALYSIS</span><h1>Analyze Text</h1><p>Paste a message or passage and get an evidence-backed interpretation.</p></div></section></main>
+    <main id="deep-page" class="page"><section class="page-heading"><div><span class="eyebrow">DEEP ANALYSIS</span><h1 id="analysis-title">Evidence-backed analysis</h1><p id="analysis-subtitle">Run an analysis to populate the eight categories.</p></div></section></main>
+    <main id="contacts-page" class="page"><section class="page-heading"><div><span class="eyebrow">CONTACTS</span><h1>My Contacts</h1><p>Choose which conversation the algorithm should work with.</p></div></section></main>
+    <main id="reports-page" class="page"><section class="page-heading"><div><span class="eyebrow">REPORTS</span><h1>Save Reports</h1><p>Save current analysis results locally.</p></div></section></main>
+  </div>
+</div>
+<script src="app.js?v=20260923-8.24-user-keys"></script>
+</body></html>
