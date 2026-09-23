@@ -1,29 +1,54 @@
 # Ary AI — Phycology Algorithm
 
-This repository contains the Ary AI / WhatsApp psychology-analysis application based on the 8.24.2 build.
+This is the **Phycology-Algorithm** repository for the Ary AI / WhatsApp conversation-analysis project.
 
 ## API keys are user-supplied
 
-**No private API key is included in this repository.** The application reads provider credentials from a local `.env` file on the user's own device.
+**No private API key is committed here.** The repository contains only blank provider configuration and a Windows setup script that asks each user for their own keys locally.
 
-Copy `.env.example` to `.env`, or run **`SET AI API KEYS.cmd`** on Windows and enter your own keys locally.
-
-Supported credentials:
+Supported environment variables:
 
 - `UNLIMITLESS_API_KEY`
 - `MISTRAL_API_KEY`
 - `GROQ_API_KEY`
 
-The `.gitignore` explicitly excludes `.env` and other local credentials/runtime data from Git.
+The repository excludes `.env`, databases, WhatsApp authentication state, logs, and other local secrets through `.gitignore`.
 
-## AI provider behavior
+### Local setup
 
-The current 8.24.2 build uses Mistral for cloud generation and Groq as fallback. The Unlimitless key is accepted and stored locally, but this build does not invent or assume an undocumented Unlimitless chat-completions endpoint.
+1. Clone the repository.
+2. Copy `.env.example` to `.env`, or run **`SET AI API KEYS.cmd`**.
+3. Enter **your own** API keys locally.
+4. Run **`Ary AI Execute.cmd`**.
 
-## Windows startup
+The API keys are never intended to be hard-coded into browser files or committed to GitHub.
 
-Run **`Ary AI Execute.cmd`**. On first launch it asks for the user's own API keys before the WhatsApp server starts and before the QR/session flow begins.
+## Provider behavior
 
-## Privacy / secrets
+The current cloud generation path is:
 
-Do not commit real keys into GitHub. Do not paste keys into `public/app.js`, HTML, CSS, issue comments, README files, or browser-side code.
+**Mistral → Groq fallback**
+
+The Unlimitless key is accepted and stored locally. The application does not invent an undocumented Unlimitless chat-completions endpoint.
+
+## Upload status
+
+The repository has been initialized with the secret-safe configuration, Windows API-key setup, package manifest, README, and the Ary AI HTML shell. The complete 8.24.2 application is distributed as the corresponding Windows ZIP package; the GitHub connector used here does not expose a binary-archive upload operation, so the remaining application source/archive files are not being falsely represented as committed when they are not.
+
+## Security
+
+Never commit a real API key.
+
+Recommended local files that must remain untracked:
+
+```
+.env
+data/
+auth_info_baileys/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+```
+
+The repository was checked for common Groq/OpenAI-style secret prefixes and no such secret was found.
