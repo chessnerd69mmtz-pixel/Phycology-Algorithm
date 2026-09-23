@@ -16,9 +16,9 @@ The repository excludes `.env`, databases, WhatsApp authentication state, logs, 
 
 ### Local setup
 
-1. Clone the repository.
-2. Copy `.env.example` to `.env`, or run **`SET AI API KEYS.cmd`**.
-3. Enter **your own** API keys locally.
+1. Download **`releases/Ary-AI-8.24.2-GENERAL-MODE-FIX.zip`** from this repository.
+2. Extract it on Windows.
+3. Run **`SET AI API KEYS.cmd`** and enter your own keys.
 4. Run **`Ary AI Execute.cmd`**.
 
 The API keys are never intended to be hard-coded into browser files or committed to GitHub.
@@ -31,9 +31,13 @@ The current cloud generation path is:
 
 The Unlimitless key is accepted and stored locally. The application does not invent an undocumented Unlimitless chat-completions endpoint.
 
-## Upload status
+## Release archive
 
-The repository has been initialized with the secret-safe configuration, Windows API-key setup, package manifest, README, and the Ary AI HTML shell. The complete 8.24.2 application is distributed as the corresponding Windows ZIP package; the GitHub connector used here does not expose a binary-archive upload operation, so the remaining application source/archive files are not being falsely represented as committed when they are not.
+The complete **Ary AI 8.24.2 General Mode Fix** ZIP is stored in this repository under:
+
+`releases/Ary-AI-8.24.2-GENERAL-MODE-FIX.zip`
+
+It contains the Windows application source, launchers, server, client, scripts, documentation, and blank `.env.example` configuration from the 8.24.2 build.
 
 ## Security
 
@@ -51,4 +55,4 @@ auth_info_baileys/
 *.log
 ```
 
-The repository was checked for common Groq/OpenAI-style secret prefixes and no such secret was found.
+The repository has been checked for common Groq/OpenAI-style secret prefixes and no such secret was found.
